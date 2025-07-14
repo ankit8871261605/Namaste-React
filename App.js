@@ -1,10 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-
-// const heading = React.createElement(
-//     "h1",
-//     { id: "heading", xyx:"xyz"},
-//     "Sample 1"
-// );
 
 
 /***
@@ -47,13 +43,13 @@ const Struct2 = React.createElement(
         [
             React.createElement(
             "h1",
-            null,
+            { key: "h1" },
             "H1 Header"
             ),
             React.createElement(
             "h2",
-            null,
-            "h2 Header"
+            { key: "h2"},
+            "h2 Header Loading!!!"
             )
         ]
     )
