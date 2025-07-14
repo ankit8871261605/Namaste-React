@@ -2,60 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 
+// JSX -is not HTML, it is a HTML like syntax extension for JavaScript.
+// JSX is transpiled before it reaches the JS Engine.
 
-/***
- * 
- * <div id="parent">
- *   <div id="child">
- *     <h1>Child Component Header</h1>
- *  </div>
- * </div>
- */
-const Struct1 = React.createElement(
-    "div",
-    { id: "parent" },
-    React.createElement(
-        "div",
-        { id: "child" },
-        React.createElement(
-            "h1",
-            null,
-            "Child Component Header"
-        )
-    )
+// React Element
+const Title = () =>( <h1 className="head" id="heading">Namaste React JSX</h1>);
+
+// React Functional Component
+// component composition
+const HeadingComponent = () => (
+    <div className="container">
+        <Title/>
+        <h1 className="heading">
+            Namate React Functional Component
+        </h1>
+    </div>
 );
-
-/***
- * 
- * <div id="parent">
- *   <div id="child">
- *     <h1>Child Component Header</h1>
- *      <h2>Child Component Header</h2>
- *  </div>
- * </div>
- */
-const Struct2 = React.createElement(
-    "div",
-    { id: "parent" },
-    React.createElement(
-        "div",
-        { id: "child" },
-        [
-            React.createElement(
-            "h1",
-            { key: "h1" },
-            "H1 Header"
-            ),
-            React.createElement(
-            "h2",
-            { key: "h2"},
-            "h2 Header Loading!!!"
-            )
-        ]
-    )
-);
-
+    
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading);
-root.render(Struct2);
+root.render(<HeadingComponent />);
